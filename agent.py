@@ -1,6 +1,7 @@
 from llm import llm
 from graph import graph
 from tools.vector import get_movie_plot
+from tools.cypher import cypher_qa
 
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 from langchain.schema import StrOutputParser
@@ -36,6 +37,11 @@ tools = [
         name="Movie Plot Search",  
         description="For when you need to find information about movies based on a plot",
         func=get_movie_plot, 
+    ),
+    Tool.from_function(
+        name="Movie information",
+        description="Provide information about movies questions using Cypher",
+        func = cypher_qa
     )
 ]
 
