@@ -2,7 +2,7 @@ import streamlit as st
 from utils import write_message
 
 # Page Config
-st.set_page_config("Ebert", page_icon=":movie_camera:")
+st.set_page_config("Generic Bot", page_icon="🌚")
 
 # Set up Session State
 if "messages" not in st.session_state:
